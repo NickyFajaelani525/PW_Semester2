@@ -3,7 +3,7 @@
 session_start();
 
 if (!$_SESSION['berhasil']){
-    header("location: index.php");
+    header("location: login.php");
     die();
 }
 

@@ -1,37 +1,4 @@
 
-<?php
-
-error_reporting(0);
-
-session_start();
-
-if(isset($_POST['login'])){
-
-    $user = $_POST['username'];
-    $pass = $_POST['password'];
-
-    if($user == 'nicky' AND $pass == '123'){
-
-        //membuat session
-        session_start();
-
-        $_SESSION['berhasil'] = true ;
-
-        header("Location: welcome.php");
-        
-    }else{
-        $salah ="<p style='color: red; text-align: center;''>username atau password anda salah!</p>";
-       
-    }
-
-
-
-} 
-
-
-
-
-?>
 
 
 <!DOCTYPE html>
@@ -40,7 +7,7 @@ if(isset($_POST['login'])){
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>tugas praktikum_4</title>
+    <title>tugas praktikum_5</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -53,27 +20,24 @@ if(isset($_POST['login'])){
     <!-- Theme style -->
     <link rel="stylesheet" href="assets/css/adminlte.min.css">
 </head>
-
 <body class="hold-transition login-page">
     <div class="login-box">
         <div class="login-logo">
-           <a><b>Nicky<u>Food</u></b></a>
+           <a><b><u>Form</u></b>Tinggi Badan Pria</a>
         </div>
         <!-- /.login-logo -->
         <div class="card">
             <div class="card-body login-card-body">
-                <p>nama : nicky <br> password: 123</p>
-                <?php echo $salah; ?>
-                <form action="" method="post">
+                <form action="proses.php" method="post">
                     <div class="input-group mb-3">
-                        <input type="text" name="username" class="form-control" placeholder="Masukan Nama"required>
+                        <input type="text" name="nama" class="form-control" placeholder="Masukan Nama"required>
                         <div class="input-group-append">
                             <div class="input-group-text">
                             </div>
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="password" name="password" class="form-control" placeholder="Masukan Password"required>
+                        <input type="number" id="nilai" name="nilai" class="form-control" placeholder="Masukan Tinggi Badan"required>
                         <div class="input-group-append">
                             <div class="input-group-text">
                             </div>
@@ -81,7 +45,7 @@ if(isset($_POST['login'])){
                     </div>
                     <div class="row">
                         <div class="col-4">
-                            <button type= "submit" name="login" class="btn btn-primary btn-block">Masuk</button>
+                            <button type= "submit" class="btn btn-primary btn-block">Cek</button>
                         </div>
                     </div>
                 </form>
